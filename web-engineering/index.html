@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delizio - Premium Food Delivery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <h1 class="logo">Delizio</h1>
+        <div class="nav-actions">
+          <div id="user-greeting" class="user-greeting"></div>
+          <button class="nav-btn" onclick="toggleAuth()">
+            <span class="auth-text">Sign In</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2 class="hero-title">Craving something delicious?</h2>
+        <p class="hero-subtitle">Premium food delivered fresh to your door</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Menu Section -->
+        <section class="menu-section">
+          <!-- Burger Hub -->
+          <div class="restaurant">
+            <div class="restaurant-header">
+              <div class="restaurant-info">
+                <h3 class="restaurant-name">Burger Hub</h3>
+                <p class="restaurant-desc">
+                  Gourmet burgers & premium ingredients
+                </p>
+              </div>
+            </div>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="item-image">
+                  <img src="beef.jpg" alt="Beef Burger" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Beef Burger</h4>
+                  <p class="item-price">₹550</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Beef Burger', 550)"
+                    aria-label="Add Beef Burger to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="item-image">
+                  <img src="zinger.jpg" alt="Chicken Zinger" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Chicken Zinger</h4>
+                  <p class="item-price">₹450</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Chicken Zinger', 450)"
+                    aria-label="Add Chicken Zinger to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza Palace -->
+          <div class="restaurant">
+            <div class="restaurant-header">
+              <div class="restaurant-info">
+                <h3 class="restaurant-name">Pizza Palace</h3>
+                <p class="restaurant-desc">
+                  Authentic Italian pizzas & fresh toppings
+                </p>
+              </div>
+            </div>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="item-image">
+                  <img
+                    src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&h=300"
+                    alt="Pepperoni Pizza"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Pepperoni Pizza</h4>
+                  <p class="item-price">₹900</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Pepperoni Pizza', 900)"
+                    aria-label="Add Pepperoni Pizza to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="item-image">
+                  <img
+                    src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&h=300"
+                    alt="Cheese Burst"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Cheese Burst</h4>
+                  <p class="item-price">₹850</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Cheese Burst', 850)"
+                    aria-label="Add Cheese Burst to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Biryani Corner -->
+          <div class="restaurant">
+            <div class="restaurant-header">
+              <div class="restaurant-info">
+                <h3 class="restaurant-name">Biryani Corner</h3>
+                <p class="restaurant-desc">
+                  Aromatic biryanis & traditional flavors
+                </p>
+              </div>
+            </div>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="item-image">
+                  <img src="chicken.jpg" alt="Chicken Biryani" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Chicken Biryani</h4>
+                  <p class="item-price">₹300</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Chicken Biryani', 300)"
+                    aria-label="Add Chicken Biryani to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="item-image">
+                  <img src="mutton.jpg" alt="Mutton Biryani" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Mutton Biryani</h4>
+                  <p class="item-price">₹500</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Mutton Biryani', 500)"
+                    aria-label="Add Mutton Biryani to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pasta Point -->
+          <div class="restaurant">
+            <div class="restaurant-header">
+              <div class="restaurant-info">
+                <h3 class="restaurant-name">Pasta Point</h3>
+                <p class="restaurant-desc">
+                  Creamy pastas & Mediterranean delights
+                </p>
+              </div>
+            </div>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="item-image">
+                  <img
+                    src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&h=300"
+                    alt="White Sauce Pasta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">White Sauce Pasta</h4>
+                  <p class="item-price">₹600</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('White Sauce Pasta', 600)"
+                    aria-label="Add White Sauce Pasta to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div class="item-image">
+                  <img
+                    src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&h=300"
+                    alt="Spicy Red Pasta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="item-content">
+                  <h4 class="item-name">Spicy Red Pasta</h4>
+                  <p class="item-price">₹650</p>
+                  <button
+                    class="add-btn"
+                    onclick="addToCart('Spicy Red Pasta', 650)"
+                    aria-label="Add Spicy Red Pasta to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Order</h3>
+        <button
+          class="close-cart"
+          onclick="toggleCart()"
+          aria-label="Close cart"
+        >
+          ×
+        </button>
+      </div>
+      <div class="cart-content">
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+          <div class="total-section">
+            <span class="total-label">Total</span>
+            <span class="total-amount">₹<span id="total">0</span></span>
+          </div>
+          <button class="checkout-btn" onclick="showCheckout()" disabled>
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Cart Toggle Button -->
+    <button class="cart-toggle" onclick="toggleCart()" aria-label="View cart">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="auth-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Welcome Back</h3>
+          <button
+            class="close-modal"
+            onclick="closeAuth()"
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Login Form -->
+          <form class="auth-form" id="login-form" onsubmit="submitLogin(event)">
+            <div class="form-group">
+              <input
+                type="email"
+                id="login-email"
+                placeholder="Email address"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <button type="submit" class="auth-btn">Sign In</button>
+          </form>
+
+          <!-- Signup Form -->
+          <form
+            class="auth-form"
+            id="signup-form"
+            onsubmit="submitSignup(event)"
+            style="display: none"
+          >
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                placeholder="Email address"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="password"
+                placeholder="Create password"
+                required
+              />
+            </div>
+            <button type="submit" class="auth-btn">Create Account</button>
+          </form>
+
+          <div class="auth-switch">
+            <p id="auth-switch-text">
+              Don't have an account?
+              <button
+                type="button"
+                class="switch-btn"
+                onclick="switchAuthMode()"
+              >
+                Sign up
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Secure Checkout</h3>
+          <button
+            class="close-modal"
+            onclick="closeCheckout()"
+            aria-label="Close checkout"
+          >
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="checkout-form" onsubmit="submitPayment(event)">
+            <div class="form-group">
+              <input
+                type="text"
+                id="card-name"
+                placeholder="Cardholder name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="card-number"
+                placeholder="Card number"
+                required
+                maxlength="19"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="expiry"
+                  placeholder="MM/YY"
+                  required
+                  maxlength="5"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="cvv"
+                  placeholder="CVV"
+                  required
+                  maxlength="4"
+                />
+              </div>
+            </div>
+            <button type="submit" class="payment-btn">
+              Pay ₹<span id="checkout-total">0</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
